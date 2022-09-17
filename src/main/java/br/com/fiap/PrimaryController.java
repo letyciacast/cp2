@@ -23,6 +23,11 @@ public class PrimaryController {
     private List<Musica> Lista = new ArrayList<>();
 
 
+    //carregar os dados para o listview
+    //salvar os dados da musica
+    //mostrar a musica como favorita
+
+
     /**
      * 
      */
@@ -44,6 +49,21 @@ public class PrimaryController {
         System.out.println("Cadastrar Título");
     }
 
+    public Financas carregarInfos(){
+        try{
+            String  nome = textFieldTitulo.getText();
+            if(nome == "")throw new IOException("");
+            String  valor = Double.valueOf(textFieldValorConta.getText());
+            if (valor<=0)throw new IOException("");
+            int     nota   = Integer.valueOf(textFieldNota.getText());
+            String categoria =choiceBoxCategoriaConta.getValue();
+            if(categoria == null)throw new IOException("");
+            Financas financas = new Financas(nome, valor, data, categoria, false);
+            return financas;
+        }catch(IOException e){
+            return null;
+        }
+
 
     private Object carregarCaract() {
         return null;
@@ -51,10 +71,16 @@ public class PrimaryController {
 
 
     private void atualizarLista() {
+        ListViewMusicas
     }
 
 
     private void limparFormulario() {
+        textFieldAlbum.setText("");
+        textFieldArtista.setText("");
+        textFieldTitulo.setText("");
+        textFieldNota.setText("");
+        textFieldGeneroMusical.setText("");
     }
     
     public void erro(String mensagem) {
