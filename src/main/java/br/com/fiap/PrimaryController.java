@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Text;
 
 public class PrimaryController {
@@ -27,10 +29,11 @@ public class PrimaryController {
     @FXML
     public void cadastrar(){
         var musica = carregarCaract();
-        if(musica == null){erro(mensagem: "as informações estão erradas");
+        if(musica == null){String mensagem;
+        erro(mensagem: "as informações estão erradas");
         limparFormulario();
         } else{
-        Lista.add(musica);
+        Lista.add((Musica) musica);
         System.out.println(Lista);
         limparFormulario();
        
@@ -38,7 +41,12 @@ public class PrimaryController {
         atualizarLista();
         }
         String text = textFieldTitulo.getText();
-        System.out.println("Cadastrar titulo");
+        System.out.println("Cadastrar Título");
+    }
+
+
+    private Object carregarCaract() {
+        return null;
     }
 
 
@@ -48,4 +56,11 @@ public class PrimaryController {
 
     private void limparFormulario() {
     }
+    
+    public void erro(String mensagem) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setContentText(mensagem);
+        alert.show();
+
+
 }
