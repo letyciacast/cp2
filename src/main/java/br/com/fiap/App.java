@@ -1,3 +1,6 @@
+//RM95801 - LETYCIA CASTILHO
+//RM94860 - GUSTAVO HORITA
+
 package br.com.fiap;
 
 import javafx.application.Application;

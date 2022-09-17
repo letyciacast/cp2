@@ -49,19 +49,6 @@ public class PrimaryController {
         System.out.println("Cadastrar Título");
     }
 
-    public Financas carregarInfos(){
-        try{
-            String  nome = textFieldTitulo.getText();
-            if(nome == "")throw new IOException("");
-            String  valor = Double.valueOf(textFieldValorConta.getText());
-            if (valor<=0)throw new IOException("");
-            int     nota   = Integer.valueOf(textFieldNota.getText());
-            String categoria =choiceBoxCategoriaConta.getValue();
-            if(categoria == null)throw new IOException("");
-            Financas financas = new Financas(nome, valor, data, categoria, false);
-            return financas;
-        }catch(IOException e){
-            return null;
         }
 
 
